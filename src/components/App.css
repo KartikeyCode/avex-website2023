@@ -1,0 +1,68 @@
+/* App.css */
+
+.navbar {
+  margin-top: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  display: flex;
+  justify-content: center;
+  border: 1px solid white;
+  background: linear-gradient(to bottom, transparent, #888);
+  border-radius: 20px;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: white;
+}
+
+.icon {
+  position: absolute; /* Position the icon absolutely within the navbar */
+ }
+.icon1{
+
+  top: 400px;
+  left: 20px;
+  transform: rotate(30deg);
+ /* Rotate the icon by 30 degrees */
+}
+.icon2{
+
+  bottom: 400px;
+  left: 0px;
+
+}
+.icon3{
+
+  top: 100px;
+  left: 0px;
+  transform: rotate(-20deg);
+ /* Rotate the icon by 30 degrees */
+}
+.icon4{
+  top: 345px;
+  left: 20px;
+  transform: rotate(90deg)
+}
+.icon5{
+
+  top: 178px;
+  left: 56px;
+  transform: rotate(30deg);
+ /* Rotate the icon by 30 degrees */
+}
+.icon6{
+  top: 150 px;
+  left : 80 px;
+}
