@@ -28,127 +28,149 @@
 }
 
 .icon {
-  position: absolute; /* Position the icon absolutely within the navbar */
- }
-.icon1{
+  position: absolute;
+}
 
+.icon1 {
   top: 400px;
   left: 20px;
   transform: rotate(30deg);
- /* Rotate the icon by 30 degrees */
 }
-.icon2{
 
-  bottom: 400px;
+.icon2 {
+  bottom: 350px;
   left: 0px;
-
 }
-.icon3{
 
+.icon3 {
   top: 10px;
   left: 0px;
   transform: rotate(-20deg);
- /* Rotate the icon by 30 degrees */
 }
-.icon4{
+
+.icon4 {
   top: 60px;
   left: 20px;
-  transform: rotate(90deg)
+  transform: rotate(90deg);
 }
-.icon5{
 
+.icon5 {
   top: 178px;
   left: 60px;
   transform: rotate(30deg);
- 
 }
-.icon6{
 
-  top:80px;
-  left:240px;
-  transform: rotate(30deg)
+.icon6 {
+  top: 80px;
+  left: 240px;
+  transform: rotate(30deg);
 }
-.icon7{
+
+.icon7 {
   top: 150px;
   left: 175px;
-  transform: rotate(30deg)
+  transform: rotate(30deg);
 }
-.icon8{
+
+.icon8 {
   top: 345px;
   left: 175px;
-  transform: rotate(30deg)
-}
-.icon9{
-  top: 230px;
-  left: 180px;
-  transform: rotate(30deg)
-}
-.icon10{
-  bottom:0px;
-  left:150px;
   transform: rotate(30deg);
-  width: 80px; /* Adjust the width value as per your desired size */
-  height: 80px; /* Adjust the height value as per your desired size */
-  
-}
-.icon11{
-  left:320px;
-  bottom:10px;
-}
-.icon12{
-  right:200px;
-  top: 55px;
-  transform: rotate(1200deg)
-}
-.icon13{
-  right:140px;
-  top: 200px;
-  transform: rotate(360deg)
-}
-.icon14 {
-  right: 0px;
-  top: 320px;
-  transform: rotate(360deg);
-  width: 100px; /* Adjust the width value as per your desired size */
-  height: 100px; /* Adjust the height value as per your desired size */
 }
 
-.icon15{
-  left:1050px;
+.icon9 {
+  top: 230px;
+  left: 180px;
+  transform: rotate(30deg);
+}
+
+.icon10 {
+  bottom: 0px;
+  left: 150px;
+  transform: rotate(30deg);
+  width: 80px;
+  height: 80px;
+}
+
+.icon11 {
+  left: 320px;
+  bottom: 10px;
+}
+
+.icon12 {
+  right: 200px;
+  top: 55px;
+  transform: rotate(1200deg);
+}
+
+.icon13 {
+  right: 140px;
+  top: 200px;
+  transform: rotate(360deg);
+}
+
+.icon14 {
+  right: 0px;
+  top: 10px;
+  transform: rotate(360deg);
+  width: 100px;
+  height: 100px;
+}
+
+.icon15 {
+  left: 1050px;
   top: 150px;
-  transform: rotate(360deg)
+  transform: rotate(360deg);
 }
-.icon16{
-  left:1100px;
+
+.icon16 {
+  left: 1100px;
   top: 100px;
-  transform: rotate(360deg)
+  transform: rotate(360deg);
 }
-.icon17{
-  left:900px;
+
+.icon17 {
+  left: 900px;
   bottom: 100px;
- 
 }
+
 .icon18 {
   left: 960px;
   bottom: 2px;
-  width: 100px; /* Adjust the width value as per your desired size */
-  height: 100px; /* Adjust the height value as per your desired size */
+  width: 100px;
+  height: 100px;
 }
+
 .icon19 {
   left: 1100px;
   bottom: 10px;
-  width: 80px; /* Adjust the width value as per your desired size */
-  height: 80px; /* Adjust the height value as per your desired size */
+  width: 80px;
+  height: 80px;
 }
+
 .icon20 {
-  right:100px;
+  right: 100px;
   bottom: 90px;
-  width: 80px; /* Adjust the width value as per your desired size */
-  height: 80px; /* Adjust the height value as per your desired size */
+  width: 80px;
+  height: 80px;
 }
+
 .icon21 {
-  left:10px;
-  bottom: 100px;
-  width: 100px; /* Adjust the width value as per your desired size */
-  height: 100px; /* Adjust the height value as per your desired size */
+  left: 10px;
+  bottom: 200px;
+  width: 90px;
+  height: 90px;
+}
+.text-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  margin-top: 200px;
+}
+.sub-text-container {
+  text-align: center;
+  margin-top: 0px;
+  color: rgb(78, 75, 75);
 }
