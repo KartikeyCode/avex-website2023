@@ -4,7 +4,7 @@ import iconImage3 from 'file:///C:/Users/Asus/Downloads/avex%20images/Cube-1%20(
 import iconImage4 from 'file:///C:/Users/Asus/Downloads/avex%20images/Color9.svg';
 import iconImage5 from 'file:///C:/Users/Asus/Downloads/Group%2046622%20(1).svg';
 import iconImage6 from 'file:///C:/Users/Asus/Downloads/Untitled%20(9)/Sphere/Color9.svg';
-import iconImage7 from 'https://imagizer.imageshack.com/img924/5035/Kx4ZJU.png';
+
 
 export {
   iconImage1,
@@ -13,5 +13,5 @@ export {
   iconImage4,
   iconImage5,
   iconImage6,
-  iconImage7,
+  
 };
