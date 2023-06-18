@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   border: 1px solid white;
-  background: linear-gradient(to bottom, transparent, #888);
+  background: linear-gradient(to bottom, transparent, #dfd8d8);
   border-radius: 20px;
 }
 
@@ -17,13 +17,19 @@
 }
 
 .navbar li {
-  margin: 0 10px;
+  margin-right: 0px;
+}
+
+.navbar li:not(:last-child) {
+  padding-right: 90px; /* Adjust the value as per your preference */
 }
 
 .navbar a {
   text-decoration: none;
   color: white;
 }
+
+
 
 .icon {
   position: absolute;
@@ -106,11 +112,13 @@
 }
 
 .icon12 {
-  right: 200px;
-  top: -20px;
+  position: absolute;
+  right: 220px;
+  top: -10px;
   transform: rotate(0deg);
-  width:60px;
-  height:60px;
+  width:75px;
+  height:75px;
+  z-index: 1; 
 }
 
 .icon13 {
@@ -244,7 +252,18 @@
   bottom:-600px;
   left:450px;
 }
-
+.icon34 {
+  top:30px;
+  left : 300px;
+  width:30px;
+  height:30px;
+}
+.icon35 {
+  top:35px;
+  left : 330px;
+  width:30px;
+  height:20px;
+}
 
 .text-container {
   display: flex;
@@ -259,6 +278,11 @@
   margin-top: 0px;
   color: rgb(78, 75, 75);
 }
+
+
+
+
+
 
 
 
