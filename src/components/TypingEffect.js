@@ -4,9 +4,9 @@ import Download from './Download';
 
 const TypingEffect = () => {
   const [text, setText] = useState('');
-  const [showArrow, setShowArrow] = useState(false);
+  const [showArrow, setShowArrow] = useState(true);
 
-  const firstLine = 'Control your finances own your data embrace';
+  const firstLine = 'Control your finances, own your data, embrace';
   const secondLine = 'your community';
 
   const startTyping = () => {
@@ -16,12 +16,8 @@ const TypingEffect = () => {
     const typingInterval = setInterval(() => {
       if (currentIndex === firstLine.length + secondLine.length + 1) {
         clearInterval(typingInterval);
-        setShowArrow(true);
-        setTimeout(() => {
-          setShowArrow(false);
-          setText('');
-          startTyping();
-        }, 2000);
+        setText('');
+        startTyping();
         return;
       }
 
@@ -57,22 +53,20 @@ const TypingEffect = () => {
           {text}
           <br />
           <span className="subtext">
-            An ecosystem around decentralized identity to control your money, data, and communities at one convenient place
+            An ecosystem around decentralized identity to control your<br/> money, data, and communities at one convenient place
           </span>
         </pre>
-        <div className="download-container">
-          <Download />
-        </div>
       </div>
       {showArrow && (
         <div className="curtain-arrow" onClick={handleArrowClick}>
           <span className="arrow"></span>
         </div>
       )}
+      <div className="download-container">
+        <Download />
+      </div>
     </div>
   );
 };
 
 export default TypingEffect;
-
-
