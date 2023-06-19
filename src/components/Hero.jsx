@@ -5,8 +5,15 @@ const Hero = () => {
     <div className="hero min-h-screen bg-base-100">
         <div className="hero-content text-center">
             <div className="max-w-md">
-            <h1 className="text-5xl font-bold">Hello there</h1>
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+            <h1 className="text-5xl font-bold text-center font-sans font-semibold text-40 leading-48 tracking-normal">
+             Your pass to <br />decentralized future
+            </h1>
+            <p className="py-6 text-center font-sans font-medium text-22 leading-26 tracking-normal">
+            Control your finance, Own your data, embrace your <br />community
+            </p>
+
+
+           
             </div>
         </div>
     </div>
