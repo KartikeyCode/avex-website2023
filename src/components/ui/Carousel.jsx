@@ -3,19 +3,19 @@ import CarouselItem from './CarouselItem'
 
 const slides = [
   {
-    heading: 'Heading 1',
-    subheading: 'Subheading 1',
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quos, rerum modi id optio iure maxime eum impedit quaerat assumenda sapiente in adipisci dolorum voluptates voluptate alias incidunt, at eveniet.'
+    heading: <span className="text-black">Zk KYC</span>,
+    subheading: 'Your ID, Your Rules',
+    paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self.'
   },
   {
-    heading: 'Heading 2',
-    subheading: 'Subheading 2',
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quos, rerum modi id optio iure maxime eum impedit quaerat assumenda sapiente in adipisci dolorum voluptates voluptate alias incidunt, at eveniet.'
+    heading: <span className="text-black">Self Sovereign Identity</span>,
+    subheading: 'Your ID, Your Rules',
+    paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self. '
   },
   {
-    heading: 'Heading 3',
-    subheading: 'Subheading 3',
-    paragraph: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum quos, rerum modi id optio iure maxime eum impedit quaerat assumenda sapiente in adipisci dolorum voluptates voluptate alias incidunt, at eveniet.'
+    heading: <span className="text-black">Permmissioned Accessibility</span>,
+    subheading: 'Your ID, Your Rules',
+    paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self. '
   },
 ]
 
