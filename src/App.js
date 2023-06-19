@@ -7,6 +7,7 @@ import About from './components/About'
 import Slider from './components/Slider'
 import Features from './components/Features'
 import Collage from './components/Collage'
+import Footer from './components/Footer'
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Slider />
       <Features />
       <Collage />
+      <Footer />
     </div>
   )
 }
