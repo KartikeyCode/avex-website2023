@@ -35,7 +35,7 @@ const Features = () => {
     <div className="hero-content flex-col lg:flex-row-reverse items-start justify-center gap-12">
         <div className='flex flex-col items-center gap-12'>
             <img src='/images/Screen.png' alt='Iphone' className=''/>
-            <button className="btn btn-primary"><a href="/">Try now</a></button>
+            <button className="btn btn-primary"><a href="/">Live Demo</a></button>
         </div>
         <div>
         <h1 className="text-2xl font-bold mb-12 text-blue-500">Wallet features</h1>
