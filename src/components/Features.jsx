@@ -1,4 +1,4 @@
-import React from 'react'
+import React , { useState } from 'react'
 
 import Accordian from './ui/Accordian'
 
@@ -36,7 +36,7 @@ const Features = () => {
         <img src='/images/Screen.png' alt='Iphone' className='max-w-xl'/>
         <div>
         <h1 className="text-2xl font-bold mb-12 text-primary">Wallet features</h1>
-        {FeaturesDetails.map((feature, index) => <Accordian key={index} {...feature} />)}
+        {FeaturesDetails.map((feature, index) => <Accordian key={index} {...feature}  isActive={index === activeIndex} toggleAccordion={() => toggleAccordion(index)}/> ))}
         </div>
     </div>
     </div>
