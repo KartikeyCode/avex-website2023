@@ -3,17 +3,17 @@ import CarouselItem from './CarouselItem'
 
 const slides = [
   {
-    heading: <span className="text-black">Zk KYC</span>,
+    heading: "Zk KYC",
     subheading: 'Your ID, Your Rules',
     paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self.'
   },
   {
-    heading: <span className="text-black">Self Sovereign Identity</span>,
+    heading: "Self Sovereign Identity",
     subheading: 'Your ID, Your Rules',
     paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self. '
   },
   {
-    heading: <span className="text-black">Permmissioned Accessibility</span>,
+    heading: "Permmissioned Accessibility",
     subheading: 'Your ID, Your Rules',
     paragraph: 'Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self. '
   },

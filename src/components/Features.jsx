@@ -31,15 +31,12 @@ const FeaturesDetails = [
 
 const Features = () => {
   return (
-    <div className="hero min-h-screen bg-base-200">
-    <div className="hero-content flex-col lg:flex-row-reverse items-start justify-center gap-12">
-        <div className='flex flex-col items-center gap-12'>
-            <img src='/images/Screen.png' alt='Iphone' className=''/>
-            <button className="btn btn-primary"><a href="/">Live Demo</a></button>
-        </div>
+    <div className="hero my-16">
+    <div className="hero-content p-16 flex-col lg:flex-row-reverse items-center justify-between bg-black rounded-xl">
+        <img src='/images/Screen.png' alt='Iphone' className='max-w-xl'/>
         <div>
-        <h1 className="text-2xl font-bold mb-12 text-blue-500">Wallet features</h1>
-            {FeaturesDetails.map((feature, index) => <Accordian key={index} {...feature} />)}
+        <h1 className="text-2xl font-bold mb-12 text-primary">Wallet features</h1>
+        {FeaturesDetails.map((feature, index) => <Accordian key={index} {...feature} />)}
         </div>
     </div>
     </div>

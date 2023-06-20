@@ -8,7 +8,7 @@ const CarouselItem = ({index, heading, subheading, paragraph, link}) => {
       <h2 className='text-2xl font-bold'>{heading}</h2>
       <strong className='text-lg'>{subheading}</strong>
       <p>{paragraph}</p>
-      <a href={`${link}`} className=' text-blue-600 mt-8'>Learn More ❯</a>
+      <a href={`${link}`} className=' text-primary mt-8'>Learn More ❯</a>
     </article> 
   )
 }
