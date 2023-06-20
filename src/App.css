@@ -19,3 +19,53 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+ .instagram-icon {
+    margin-right: 100px;
+  }
+  .instagram-link {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    width: 31px; /* Set the width and height to match the desired dimensions */
+    height: 31px;
+    overflow: hidden; /* Ensure the circular shape is maintained */
+    border-radius: 30%;
+  }
+  
+  .instagram-link img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Prevent the image from stretching */
+    border: none; /* Remove the default image border */
+    transform: scale(1); /* Set the initial scale to 1 */
+    transition: transform 0.3s ease; /* Add transition for smooth effect */
+  }
+  
+  .instagram-link:hover img {
+    transform: scale(0.8); /* Apply scale of 0.8 for zoom out effect */
+  }
+  
+  .instagram-link:hover {
+    border: 1px solid;
+    border-image-source: linear-gradient(180deg, #B95BDF 0%, #665DDA 100%);
+    border-image-slice: 1;
+  }
+  .bullet {
+    width: 10px;
+    height: 10px;
+    margin-right: 5px;
+    display: inline-block;
+  }
+  
+  .bullet-filled {
+    background-color: black;
+    border-radius: 50%;
+  }
+  
+  .bullet-empty {
+    border: 2px solid black;
+    border-radius: 50%;
+  }
+  
+  
