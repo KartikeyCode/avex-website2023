@@ -19,6 +19,14 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
+.bg-icons {
+    animation: sway 16s infinite;
+    transform-origin: 50% 100% 0;
+}
+@keyframes sway {
+    0%, 100%{ transform: rotate(-8deg);}
+    50%{ transform: rotate(6deg); }
+}
  .instagram-icon {
     margin-right: 100px;
   }
