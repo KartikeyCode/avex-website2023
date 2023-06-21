@@ -10,7 +10,7 @@ const Slider = () => {
   return (
     <section className='flex flex-col gap-8 py-16'>
       <div className='flex justify-between md:mx-[8vw] mx-4'>
-        <article className='ml-4 max-w-xl'>
+        <article className='ml-4 max-w-xl z-10'>
           <h1 className="text-5xl font-bold leading-snug mb-4"><span className="text-primary">Decentralized Identity</span> Ecosystem</h1>
           <p className="text-xl">Manage and own your online identity with self-sovereign identity. Safely control and shape your personal information giving you freedom and choice. Own your digital story and reflect your true self.</p>
         </article>
