@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
 
 import Image1 from "../assets/images/1.png";
 import Image2 from "../assets/images/2.png";
@@ -170,17 +171,56 @@ const Images = [
 ];
 
 const Hero = () => {
+  const aboutRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const aboutBottom = aboutRef.current.getBoundingClientRect().bottom;
+
+      const element = document.querySelector('.move-down-text');
+      if (element && scrollPosition < aboutBottom) {
+        const distanceToBottom = aboutBottom - element.getBoundingClientRect().bottom;
+        const translateY = Math.max(0, scrollPosition - distanceToBottom);
+
+        const stopPosition = aboutBottom - 0;
+
+        if (translateY <= stopPosition) {
+          const fontSize = 20 + (translateY / 10); // Increase the font size based on the translateY value
+
+          gsap.to(element, { y: translateY, fontSize: `${fontSize}px` }); // Animate the translateY and fontSize properties using GSAP
+        } else {
+          gsap.to(element, { y: stopPosition }); // Animate to the stop position
+        }
+      }
+    };
+ window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className="hero min-h-screen bg-base-100 relative overflow-x-clip">
-      {Images.map((image, index) => <img src={image.path} alt={index} style={{position: 'absolute', top: `${image.top}px`, left: `${image.left}px`}} className='bg-icons'/>)}
+      {Images.map((image, index) => (
+        <img
+          key={index}
+          src={image.path}
+          alt={index}
+          style={{ position: 'absolute', top: `${image.top}px`, left: `${image.left}px` }}
+          className="bg-icons"
+        />
+      ))}
       <div className="hero-content text-center px-4">
-          <div className="max-w-lg">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-snug">Your pass to decentralized future </h1>
-            <p className='text-lg md:text-xl'> Control your finance, Own your data, embrace your community </p>
-          </div>
+        <div className="max-w-lg">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-snug">Your pass to decentralized future</h1>
+          <p ref={aboutRef} className="text-lg md:text-xl move-down-text">
+            Control your finance, Own your data, embrace your community
+          </p>
+        </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Hero
+export default Hero;
