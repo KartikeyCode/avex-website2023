@@ -23,7 +23,8 @@ const Carousel = () => {
   return (
     <Timeline
       align="left"
-      style={{ margin: 0, padding: 0, position: 'relative', left: '-40px' }}
+
+      style={{ margin: 0, padding: 0, position: 'relative', left: '-480px' }}
     >
       {slides.map((slide, index) => (
         <TimelineItem key={index}>
@@ -82,3 +83,4 @@ const Carousel = () => {
 };
 
 export default Carousel;
+
