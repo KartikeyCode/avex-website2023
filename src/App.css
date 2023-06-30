@@ -75,5 +75,10 @@
     border: 2px solid black;
     border-radius: 50%;
   }
+ .black-box-container {
+    width: 500px; 
+    height: 400px; 
+  }
+  
   
   
