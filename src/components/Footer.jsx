@@ -12,11 +12,11 @@ const Footer = () => {
       <img src="/images/Footer Logo.png" alt="Avex Logo" />
       <p className='text-lg text-base-100'><a href="/">Downloads</a> | <a href="/">Blogs</a> | <a href="/">Terms</a> | <a href="/">Privacy</a></p>
           <div className="flex">
-          <a href="https://github.com/Torque44" target="_blank" rel="noopener noreferrer" className="mb-0 ml-0 instagram-link"><img src="/images/github.png" alt="GitHub" /></a>
-          <a href="https://twitter.com/AyushyaJain" target="_blank" rel="noopener noreferrer" className="mb-0 ml-8 instagram-link"><img src="/images/twitter.png" alt="Twitter" /></a>
-          <a href="mailto:ayushya2002@gmail.com" className="mb-0 ml-8 instagram-link"><img src="/images/mail.png.png" alt="Mail" /></a>
+          <a href="https://github.com/Anubhav-Pathak/avex-website2023" target="_blank" rel="noopener noreferrer" className="mb-0 ml-0 instagram-link"><img src="/images/github.png" alt="GitHub" /></a>
+          <a href="https://twitter.com/avex_xyz" target="_blank" rel="noopener noreferrer" className="mb-0 ml-8 instagram-link"><img src="/images/twitter.png" alt="Twitter" /></a>
+          <a href="mailto:team@avex.technology" className="mb-0 ml-8 instagram-link"><img src="/images/mail.png.png" alt="Mail" /></a>
           <img src="/images/phone.png" alt="Phone" className="mb-0 ml-8 instagram-link" />
-          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="mb-0 ml-7 instagram-link"><img src="/images/Vector.png" alt="Instagram" /></a>
+          <a href="https://www.instagram.com/avex_xyz/" target="_blank" rel="noopener noreferrer" className="mb-0 ml-7 instagram-link"><img src="/images/Vector.png" alt="Instagram" /></a>
         </div>
     </div> 
     <form action="#" className=''>
