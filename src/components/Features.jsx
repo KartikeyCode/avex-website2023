@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-
-import Accordian from './ui/Accordian'
+import React, { useState } from 'react';
+import Accordian from './ui/Accordian';
 
 const FeaturesDetails = [
   {
@@ -27,20 +26,20 @@ const FeaturesDetails = [
     heading: 'DeFi',
     paragraph: 'Get full access to DeFi activities like lending, borrowing, swapping, staking, bridging, and more across multiple networks all in one app',
   },
-]
+];
 
 const Features = () => {
-  const [activeIndex, setActiveIndex] = useState(null)
+  const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleAccordion = (index) => {
-    setActiveIndex((prevIndex) => (prevIndex === index ? null : index))
-  }
+    setActiveIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
 
   return (
     <div className="hero my-16">
       <div className="hero-content p-16 flex-col lg:flex-row-reverse items-center justify-between bg-black rounded-xl">
         <img src="/images/Screen.png" alt="Iphone" className="max-w-xl" />
-        <div>
+        <div className="black-box-container">
           <h1 className="text-2xl font-bold mb-12 text-primary">Wallet features</h1>
           {FeaturesDetails.map((feature, index) => (
             <Accordian
@@ -53,7 +52,7 @@ const Features = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Features
+export default Features;
