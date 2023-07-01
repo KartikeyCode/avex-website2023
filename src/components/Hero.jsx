@@ -1,4 +1,6 @@
-import React from 'react'
+import {useRef,React} from 'react'
+
+import {useInView,motion,useMotionValue,useScroll,useTransform} from "framer-motion"
 
 import Image1 from "../assets/images/1.png";
 import Image2 from "../assets/images/2.png";
@@ -169,17 +171,29 @@ const Images = [
   },
 ];
 
+
+
 const Hero = () => {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { once: true });
+  const { scrollYProgress } = useScroll({});
+  const trans = isInView ? [0,0] : [0,2500]
+  const scal = isInView ? [0,0] : [1,3.5]
+  const translateY = useTransform(scrollYProgress, [0,0.9], [0,3500]); // Adjust the range and values as needed
+  const scale = useTransform(scrollYProgress, [0, 1], [1,3.5]); // Adjust the range and values as needed
+
   return (
     <div className="hero min-h-screen bg-base-100 relative overflow-x-clip">
       {Images.map((image, index) => <img src={image.path} alt={index} style={{position: 'absolute', top: `${image.top}px`, left: `${image.left}px`}} className='bg-icons'/>)}
-      <div className="hero-content text-center px-4">
-          <div className="max-w-lg">
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 leading-snug">Your pass to decentralized future </h1>
-            <p className='text-lg md:text-xl'> Control your finance, Own your data, embrace your community </p>
+      <div  className=" hero-content text-center px-4">
+          <div  className=" max-w-lg">
+            <motion.h1 initial={{y:100,opacity:0}} animate={{y:0, opacity:[0,0,1]}} transition={{duration:2}} className="text-4xl md:text-5xl font-bold mb-4 leading-snug">Your pass to decentralized future </motion.h1>
+            <motion.p style={{translateY,scale}}  initial={{y:100,opacity:0}} animate={{y:0, opacity:[0,0,0,1]}} transition={{duration:3}} className='text-lg md:text-xl '> Control your finance, Own your data, embrace your community </motion.p>
           </div>
       </div>
+      
     </div>
+
   )
 }
 

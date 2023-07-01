@@ -36,16 +36,17 @@ const Features = () => {
   };
 
   return (
-    <div className="hero my-16">
-      <div className="hero-content p-16 flex-col lg:flex-row-reverse items-center justify-between bg-black rounded-xl">
-        <img src="/images/Screen.png" alt="Iphone" className="max-w-xl" />
-        <div className="black-box-container">
-          <h1 className="text-2xl font-bold mb-12 text-primary">Wallet features</h1>
+    <div className="hero my-52 mb-[500px]">
+      <div className="hero-content w-[1411px] h-[700px] flex-col lg:flex-row-reverse items-center justify-between bg-black rounded-xl">
+        <img src="/images/Screen.png" alt="Iphone" className="max-w-2xl" />
+        <div className=" ml-[128px]">
+          <h1 className="text-5xl font-bold mb-14 text-transparent bg-clip-text bg-gradient-to-b from-[#DF5AE1] to-[#465DD8] ">Wallet features</h1>
           {FeaturesDetails.map((feature, index) => (
             <Accordian
               key={index}
               {...feature}
-              isActive={index === activeIndex}
+              index={index}
+              activeIndex={activeIndex}
               toggleAccordion={() => toggleAccordion(index)}
             />
           ))}

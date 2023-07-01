@@ -20,8 +20,7 @@
     background-clip: text;
 }
 .bg-icons {
-    animation: sway 16s infinite;
-    transform-origin: 50% 100% 0;
+    
 }
 @keyframes sway {
     0%, 100%{ transform: rotate(-8deg);}
