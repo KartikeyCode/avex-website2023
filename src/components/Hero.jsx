@@ -172,6 +172,8 @@ const Images = [
   },
 ];
 
+
+
 const Hero = () => {
   const wiggleAnimation = {
     hover: { rotate: [-10, 10, -10, 0], transition: { duration: 0.3 } },
@@ -188,7 +190,7 @@ const Hero = () => {
 
 
   return (
-    <div className="hero bg-[#F2F2F2] min-h-screen bg-base-100 relative overflow-x-clip ">
+    <div className="hero bg-[#F2F2F2] min-h-screen  relative overflow-x-clip ">
       {Images.map((image, index) => (
         <motion.img
           src={image.path}
@@ -225,6 +227,7 @@ const Hero = () => {
           </motion.p>
         </div>
       </div>
+      
     </div>
   );
 };
