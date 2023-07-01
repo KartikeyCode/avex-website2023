@@ -10,22 +10,18 @@ const slides = [
 ];
 
 const Carousel = () => {
-  const [hovered, setHovered] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+  const [clicked, setClicked] = useState(false);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setHovered(false);
+  const handleClick = (index) => {
+    setActiveIndex(index);
+    setClicked(true);
   };
 
   return (
-    <Timeline
-      align="left"
+    <div>
 
-      style={{ margin: 0, padding: 0, position: 'relative', left: '-480px' }}
-    >
+    <Timeline align="left" style={{ margin: 0, padding: 0, position: 'relative', left: '-480px' }}>
       {slides.map((slide, index) => (
         <TimelineItem key={index}>
           <TimelineSeparator>
@@ -33,13 +29,15 @@ const Carousel = () => {
               color="primary"
               variant="outlined"
               sx={{
-                backgroundColor: 'black',
+                backgroundColor: clicked && activeIndex === index ? 'white' : 'black',
                 transition: 'background-color 0.3s',
                 position: 'relative',
-                width: '40px', // Adjust the width of the circle as needed
-                height: '40px', // Adjust the height of the circle as needed
+                width: '40px',
+                height: '40px',
                 '&:hover': {
-                  backgroundColor: 'white',
+                  backgroundColor: clicked && activeIndex === index ? 'white' : 'black',
+                },
+                ...(activeIndex === index && {
                   '&::before': {
                     content: '""',
                     position: 'absolute',
@@ -53,11 +51,10 @@ const Carousel = () => {
                     zIndex: -1,
                     transition: 'opacity 0.3s',
                   },
-                },
+                }),
               }}
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            >
+              onClick={() => handleClick(index)}
+              >
               <img
                 src={slide.image}
                 alt={`Image ${index + 1}`}
@@ -66,10 +63,10 @@ const Carousel = () => {
                   height: '100%',
                   objectFit: 'cover',
                   borderRadius: '50%',
-                  filter: hovered ? 'invert(100%)' : 'none',
+                  filter: clicked && activeIndex === index ? 'invert(100%)' : 'none',
                   transition: 'filter 0.3s',
                 }}
-              />
+                />
             </TimelineDot>
             {index < slides.length - 1 && <TimelineConnector />}
           </TimelineSeparator>
@@ -79,8 +76,8 @@ const Carousel = () => {
         </TimelineItem>
       ))}
     </Timeline>
+      </div>
   );
 };
 
 export default Carousel;
-
