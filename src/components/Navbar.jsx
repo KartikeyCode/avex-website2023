@@ -2,15 +2,15 @@ import React from 'react'
 
 const Navbar = () => {
   return (
-    <div className="navbar z-50 top-4 max-w-4xl fixed left-1/2 -translate-x-1/2">
+    <div className="navbar border-2   z-50 top-4 max-w-sm lg:max-w-2xl fixed left-1/2 -translate-x-1/2">
         <div className="flex-1">
-        <a href="/" className=""><img src="/images/Logo.png" alt="Avex Logo" /></a>
+        <a href="/" className="ml-9"><img src="/images/Logo.png" alt="Avex Logo" /></a>
         </div>
         <div className="">
-            <ul className="menu menu-horizontal px-1 md:flex hidden">
-                            <li><a href='/' className="font-inter font-bold" style={{ marginRight: '115px', color: '#9C9B9C' }}>Services</a></li>
-                            <li><a href='/' className="font-inter font-bold" style={{ marginRight: '115px', color: '#9C9B9C' }}>Resources</a></li>
-                            <li><a href='/' className="font-inter font-bold" style={{ marginRight: '115px', color: '#9C9B9C' }}>About</a></li>
+            <ul className="menu menu-horizontal space-x-14 px-1 md:flex hidden">
+                            <li><a href='/' className="font-inter font-bold" style={{ color: '#9C9B9C' }}>Services</a></li>
+                            <li><a href='/' className="font-inter font-bold" style={{ color: '#9C9B9C' }}>Resources</a></li>
+                            <li><a href='/' className="font-inter font-bold" style={{ color: '#9C9B9C' }}>About</a></li>
                             <li><a href='/' className="font-inter font-bold" style={{ color: '#9C9B9C' }}>Contact</a></li>
             </ul>
             <details className="dropdown dropdown-end md:hidden">
