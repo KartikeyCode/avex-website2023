@@ -1,21 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  Timeline,
-  TimelineItem,
-  TimelineSeparator,
-  TimelineContent,
-  TimelineDot,
-  TimelineConnector,
-} from "@mui/lab";
- import DOC from "../assets/images/DOC.png"
- import CUST from "../assets/images/Customer.png"
-
-  
-  
-
-
 const Box = ({ heading, text1, text2, color, ind }) => {
   return (
     <div
@@ -33,27 +18,45 @@ const Box = ({ heading, text1, text2, color, ind }) => {
     </div>
   );
 };
-
-
 const Slider = () => {
-
-  const Dot = ({curSlide,ind, setSlide }) => {
-    const handleClick = (e) => {
-      const slide = +e.target.dataset.slide;
-      console.log(slide);
-      setSlide(slide);
-      setCurSlide(ind)
-    };
+    const Dot = ({ curSlide, ind, setSlide }) => {
+      const [clicked, setClicked] = useState(false);
   
-    return (
-      <div className={` h-[50px] rounded-full  w-[50px] flex justify-center items-center ${ind===curSlide?"bg-gradient-to-br from-[#0595FD] to-[#0054D2] ":"bg-inherit"}` }>
-      <div
-        className={`     h-[39px] flex justify-center drop-shadow-lg items-center w-[39px] rounded-full bg-black `}
-        data-slide={ind}
-        style={{backgroundColor: ind === curSlide ? "black" : "#D9D9D9" }}
-        onClick={handleClick}
+      const handleClick = (e) => {
+        const slide = +e.target.dataset.slide;
+        console.log(slide);
+        setSlide(slide);
+        setCurSlide(ind);
+        setClicked(true);
+      };
+  
+      // Define an array of image paths for each dot
+      const imagePaths = [
+        "/images/DOC.png",
+        "/images/Customer.png",
+        "/images/DOC.png",
+        "/images/Customer.png",
+        "/images/DOC.png",
+      ];
+  
+      return (
+        <div
+          className={`h-[50px] rounded-full w-[50px] flex justify-center items-center ${
+            ind === curSlide ? "bg-white border-[5px] border-blue-500" : "bg-black"
+          } ${clicked ? "border-[50px] border-blue-500" : ""}`}
+          style={{
+            background: ind === curSlide ? "white" : "black", 
+          }}
+          onClick={handleClick}
         >
-      </div>
+    
+          <img
+            src={imagePaths[ind]}
+            alt={`Dot ${ind + 1}`}
+            style={{
+              filter: ind === curSlide ? "invert(100%)" : "none",
+            }}
+          />
         </div>
     );
   };
@@ -94,9 +97,6 @@ const Slider = () => {
       color: "text-[#CB04DC] ",
     },
   ];
-
-  
-
   const [curSlide, setCurSlide] = useState(0);
 
   const Boxes = stuff.map((s, ind) => {
@@ -158,26 +158,24 @@ const Slider = () => {
   }, [curSlide]);
 
   return (
-    <div className="">
-      <section className="bg-[#F2F2F2] flex flex-col  gap-8 py-16">
+    <div>
+      <section className="bg-[#F2F2F2] flex flex-col gap-8 py-16">
         <div className="md:mx-[8vw] mx-4">
           <article className="ml-4 max-w-xl z-10 mt-96">
             <h1 className="text-5xl font-bold leading-snug mb-4">
-              <span className="text-primary">Decentralized Identity</span>{" "}
-              Ecosystem
+              <span className="text-primary">Decentralized Identity</span> Ecosystem
             </h1>
             <p className="text-xl">
-              Manage and own your online identity with self-sovereign identity.
-              Safely control and shape your personal information giving you
-              freedom and choice. Own your digital story and reflect your true
-              self.
+              Manage and own your online identity with self-sovereign identity. Safely control and shape your personal
+              information giving you freedom and choice. Own your digital story and reflect your true self.
             </p>
           </article>
         </div>
       </section>
 
       <main className="flex items-center justify-center overflow-hidden">
-        <div className="h-[900px] w-full  relative">
+        <div className="h-[900px] w-full relative">
+          
           {Boxes}
 
           <div className="flex gap-5 absolute ml-36 top-[40%] -translate-y-1/2 flex-col space-y-3">
@@ -185,7 +183,6 @@ const Slider = () => {
           </div>
         </div>
       </main>
-     
     </div>
   );
 };
