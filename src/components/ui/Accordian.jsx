@@ -16,14 +16,14 @@ const Accordian = ({ heading, paragraph, index, activeIndex, toggleAccordion }) 
           <div
             className={`w-3 h-3 mr-2  rounded-full ${isOpen ? 'bg-white' : 'bg-black border-[3px]'}`}
           ></div>
-          <h2 className="text-2xl font-medium">{heading}</h2>
+          <h2 className="text-xl md:text-2xl font-medium">{heading}</h2>
         </div>
       </div>
       {isOpen && <motion.p
        variants={paragraphVariants}
        initial="hidden"
        animate="visible"
-       className="mt-2 ml-5  text-left text-lg text-white">{paragraph}</motion.p>}
+       className="mt-2 md:ml-5   w-[250px] md:w-[450px] md:text-lg text-base text-white">{paragraph}</motion.p>}
     </div>
   );
 };
