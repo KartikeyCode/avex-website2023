@@ -12,7 +12,7 @@ import Slider from './components/Slider'
 import Features from './components/Features'
 import Collage from './components/Collage'
 import Footer from './components/Footer'
-import Carousel from './components/ui/Carousel'
+
 
 const App = () => {
 
