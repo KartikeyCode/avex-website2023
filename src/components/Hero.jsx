@@ -52,13 +52,13 @@ const Images = [
   },
   {
     path: Image4,
-    top: 92,
-    left: 447,
+    top: 40,
+    left: 400,
   },
   {
     path: Image5,
-    top: 222,
-    left: 274,
+    top: 135,
+    left: 200,
   },
   {
     path: Image6,
@@ -175,8 +175,11 @@ const Images = [
 
 
 const Hero = () => {
+  const windowWidth = useRef(window.innerWidth);
+  const shouldDisableScrollAnimation = windowWidth.current <= 500;
+  
   const wiggleAnimation = {
-    hover: { rotate: [-10, 10, -10, 0], transition: { duration: 0.3 } },
+    hover: { rotate: [-10, 10, -10, 0], transition: { duration: 0.6 } },
   };
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -185,12 +188,16 @@ const Hero = () => {
   });
 
   const fontWeight = useTransform(scrollYProgress,[0,1],[400,700])
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, 570]); // Adjust the range and values as needed
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, 650]); // Adjust the range and values as needed
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]); // Adjust the range and values as needed
-
+  let style = {}
+  if(!shouldDisableScrollAnimation){
+    style = { y: translateY, scale: scale,fontWeight:fontWeight }
+  }
+  
 
   return (
-    <div className="hero bg-[#F2F2F2] min-h-screen  relative overflow-x-clip ">
+    <div className=" bg-[#F2F2F2] min-h-screen  relative overflow-x-clip ">
       {Images.map((image, index) => (
         <motion.img
           src={image.path}
@@ -206,22 +213,22 @@ const Hero = () => {
           className="bg-icons"
         />
       ))}
-      <div className=" hero-content h-[500px] text-center px-4" ref={ref}>
-        <div className=" max-w-lg">
+      <div className=" hero-content   md:h-[500px] text-center px-4" ref={ref}>
+        <div className="flex flex-col justify-center items-center md:max-w-lg">
           <motion.h1
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
-            className="text-4xl md:text-5xl font-bold mb-4 leading-snug"
+            className="text-lg mt-52 z-0 md:ml-[250px] md:w-[414px] md:h-[86px] md:text-[35px]  font-bold mb-4 leading-snug"
           >
-            Your pass to decentralized future{" "}
+            Your Pass to Decentralized Future{" "}
           </motion.h1>
           <motion.p
-            style={{ y: translateY, scale: scale,fontWeight:fontWeight }}
+            style={style}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: [0, 0, 0, 1]}}
             transition={{ duration: 2 }}
-            className="text-4xl md:text-xl  "
+            className="md:text-[25px] text-xs  z-0 md:ml-[240px] md:text-xl md:w-[495px] md:h-[73px] "
           >
             Control your finance, Own your data, embrace your community{" "}
           </motion.p>

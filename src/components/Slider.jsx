@@ -4,15 +4,15 @@ import { motion, AnimatePresence } from "framer-motion";
 const Box = ({ heading, text1, text2, color, ind }) => {
   return (
     <div
-      className={` py-[15px] drop-shadow-xl bg-[#FFFDFD] flex flex-col items-center rounded-[10px] h-[253px] w-[337px] zero-op-slide absolute cara-slide top-20 right-40`}
+      className={` py-[15px] drop-shadow-xl bg-[#FFFDFD] ml-[215px] md:ml-0 flex flex-col w-36 h-80  items-center rounded-[10px] md:h-[253px] md:w-[337px] zero-op-slide absolute cara-slide md:top-20 md:right-20`}
       data-slide={ind}
     >
-      <div className="bg-black flex justify-center items-center w-[194px] h-[48px] rounded-[18px] ">
-        <h1 className="text-white text-xl font-bold">{heading}</h1>
+      <div className="bg-black flex justify-center w-[125px] h-[32px] items-center md:w-[194px] md:h-[48px] rounded-[18px] ">
+        <h1 className="text-white md:text-xl text-base font-bold">{heading}</h1>
       </div>
-      <h2 className={color+"font-bold mt-[22px] mb-[17px] w-[298px] text-lg "}>{text1} </h2>
-      <h3 className="w-[298px] text-[15px] text-[#525151]">{text2} </h3>
-      <a href="" className="text-xs w-[298px] mt-5  text-[#0568FD]">
+      <h2 className={color+"font-bold ml-1 md:ml-0 text-center text-sm mt-[22px] mb-[17px] md:w-[298px] md:text-lg "}>{text1} </h2>
+      <h3 className="md:w-[298px] text-sm ml-1 md:ml-0 md:text-[15px] text-[#525151]">{text2} </h3>
+      <a href="" className="text-xs md:mr-0  md:w-[298px] mt-5  text-[#0568FD]">
         Learn More <b> {">"} </b>
       </a>
     </div>
@@ -161,14 +161,10 @@ const Slider = () => {
     <div>
       <section className="bg-[#F2F2F2] flex flex-col gap-8 py-16">
         <div className="md:mx-[8vw] mx-4">
-          <article className="ml-4 max-w-xl z-10 mt-96">
+          <article className="ml-4 max-w-xl z-10 mt-40 md:mt-96">
             <h1 className="text-5xl font-bold leading-snug mb-4">
-              <span className="text-primary">Decentralized Identity</span> Ecosystem
+              <span className="text-primary">Decentralized Identity</span> 
             </h1>
-            <p className="text-xl">
-              Manage and own your online identity with self-sovereign identity. Safely control and shape your personal
-              information giving you freedom and choice. Own your digital story and reflect your true self.
-            </p>
           </article>
         </div>
       </section>
@@ -178,7 +174,7 @@ const Slider = () => {
           
           {Boxes}
 
-          <div className="flex gap-5 absolute ml-36 top-[40%] -translate-y-1/2 flex-col space-y-3">
+          <div className="flex mt-36 md:mt-0  ml-[280px] flex-col md:gap-5 absolute md:ml-36 top-[40%] -translate-y-1/2  space-y-3">
             {Dots}
           </div>
         </div>
