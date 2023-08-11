@@ -1,18 +1,17 @@
 import React, { useState, useEffect } from "react";
 import "../App.css";
-import { motion, AnimatePresence } from "framer-motion";
 const Box = ({ heading, text1, text2, color, ind }) => {
   return (
     <div
-      className={` py-[15px] drop-shadow-xl bg-[#FFFDFD] ml-[215px] md:ml-0 flex flex-col w-36 h-80  items-center rounded-[10px] md:h-[253px] md:w-[337px] zero-op-slide absolute cara-slide md:top-20 md:right-20`}
+      className={`drop-shadow-xl bg-white ml-44 flex gap-4 flex-col p-4 rounded-[10px] w-64 zero-op-slide absolute cara-slide md:top-20 md:right-20`}
       data-slide={ind}
     >
-      <div className="bg-black flex justify-center w-[125px] h-[32px] items-center md:w-[194px] md:h-[48px] rounded-[18px] ">
+      <div className="bg-black flex justify-center min-w-min rounded-[18px] ">
         <h1 className="text-white md:text-xl text-base font-bold">{heading}</h1>
       </div>
-      <h2 className={color+"font-bold ml-1 md:ml-0 text-center text-sm mt-[22px] mb-[17px] md:w-[298px] md:text-lg "}>{text1} </h2>
-      <h3 className="md:w-[298px] text-sm ml-1 md:ml-0 md:text-[15px] text-[#525151]">{text2} </h3>
-      <a href="" className="text-xs md:mr-0  md:w-[298px] mt-5  text-[#0568FD]">
+      <h2 className={color+"font-bold text-center text-sm md:text-lg "}>{text1} </h2>
+      <h3 className="text-sm text-[#525151]">{text2} </h3>
+      <a href="/" className="text-xs text-[#0568FD]">
         Learn More <b> {">"} </b>
       </a>
     </div>
@@ -41,7 +40,7 @@ const Slider = () => {
   
       return (
         <div
-          className={`h-[50px] rounded-full w-[50px] flex justify-center items-center ${
+          className={`h-[40px] rounded-full w-[40px] md:h-[50px] md:w-[50px] flex justify-center items-center ${
             ind === curSlide ? "bg-white border-[5px] border-blue-500" : "bg-black"
           } ${clicked ? "border-[50px] border-blue-500" : ""}`}
           style={{
@@ -122,25 +121,25 @@ const Slider = () => {
 
     if (slides && slideCount > 0) {
       for (let i = 0; i < slideCount; i++) {
-        if (i == curSlide) {
+        if (i === curSlide) {
           slides[i].classList.remove("zero-op-slide");
           slides[i].classList.remove("next-slide");
           slides[i].classList.remove("next-next-slide");
           slides[i].classList.remove("prev-slide");
           slides[i].classList.add("active-slide");
-        } else if (i == (curSlide + 1) % slideCount) {
+        } else if (i === (curSlide + 1) % slideCount) {
           slides[i].classList.remove("zero-op-slide");
           slides[i].classList.remove("active-slide");
           slides[i].classList.remove("next-next-slide");
           slides[i].classList.remove("prev-slide");
           slides[i].classList.add("next-slide");
-        } else if (i == (curSlide + 2) % slideCount) {
+        } else if (i === (curSlide + 2) % slideCount) {
           slides[i].classList.remove("zero-op-slide");
           slides[i].classList.remove("next-slide");
           slides[i].classList.remove("active-slide");
           slides[i].classList.remove("prev-slide");
           slides[i].classList.add("next-next-slide");
-        } else if (i == (curSlide - 1 + slideCount) % slideCount) {
+        } else if (i === (curSlide - 1 + slideCount) % slideCount) {
           slides[i].classList.remove("zero-op-slide");
           slides[i].classList.remove("next-slide");
           slides[i].classList.remove("next-next-slide");
@@ -158,25 +157,13 @@ const Slider = () => {
   }, [curSlide]);
 
   return (
-    <div>
-      <section className="bg-[#F2F2F2] flex flex-col gap-8 py-16">
-        <div className="md:mx-[8vw] mx-4">
-          <article className="ml-4 max-w-xl z-10 mt-40 md:mt-96">
-            <h1 className="text-5xl font-bold leading-snug mb-4">
-              <span className="text-primary">Decentralized Identity</span> 
-            </h1>
-          </article>
-        </div>
-      </section>
+    <div className="pt-36 px-4 max-w-7xl mx-auto">
+      <h1 className="text-primary text-5xl leading-snug">Decentralized Identity</h1> 
 
-      <main className="flex items-center justify-center overflow-hidden">
-        <div className="h-[900px] w-full relative">
-          
+      <main className="flex flex-col-reverse xl:flex-row items-center justify-center mt-8 xl:mt-0 overflow-hidden">
+        <div className="flex flex-row xl:flex-col gap-5">{Dots}</div>
+        <div className="min-h-[60vh] md:min-h-[80vh] w-full relative">
           {Boxes}
-
-          <div className="flex mt-36 md:mt-0  ml-[280px] flex-col md:gap-5 absolute md:ml-36 top-[40%] -translate-y-1/2  space-y-3">
-            {Dots}
-          </div>
         </div>
       </main>
     </div>

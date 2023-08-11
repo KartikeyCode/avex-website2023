@@ -38,13 +38,13 @@ const Collage = () => {
   
 
   return (
-    <div className="flex flex-col justify-center items-center mb-60">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 p-4 max-w-7xl mx-auto">
       <motion.h1 ref={ref}
         style={{
           transform: isInView ? "none" : "translateY(-100px)",
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-        }}  className="font-bold text-[#000] text-6xl self-start ml-5 md:ml-36 mb-7"> Security </motion.h1>
+        }}  className=" col-span-full font-bold text-[#000] text-6xl self-start ml-5 md:ml-36 mb-7"> Security </motion.h1>
       <motion.div
         ref={ref}
         style={{
@@ -52,98 +52,57 @@ const Collage = () => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
+        className="col-span-full border-2"
       >
-        <div className="flex flex-col md:flex-row  drop-shadow-2xl">
-          <div className="md:w-[883px] w-[380px] md:h-[678px] overflow-hidden">
-            <img
-              className="hover:scale-110 md:w-[883px] md:h-[678px] transition ease-in-out delay-150 duration-500"
-              src={girlphone1}
-            />
-          </div>
-          <div className="flex flex-col px-9 py-14 w-[380px]  md:w-[363px] md:h-[678px] bg-white">
-            <div className="flex">
-              <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]">
-                <img src={smile} />
-              </div>
-              <h1 className="text-[#000] ml-[13px] font-medium text-lg">
-                {" "}
-                Security{" "}
-              </h1>
+        <div className="col-span-full flex flex-col sm:flex-row drop-shadow-2xl">
+          <div className=""><img className="object-cover hover:scale-110 transition ease-in-out delay-150 duration-500" src={girlphone1} alt="Girl"/></div>
+          <div className="bg-white px-4 py-2">
+            <div className="flex gap-2">
+              <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]"><img src={smile} alt="smile"/></div>
+              <h1 className="text-[#000] font-medium text-lg">{" "}Security{" "}</h1>
             </div>
-            <div className=" md:w-[244px]">
-              <h2 className="text-[#525151] mt-[30px] text-2xl font-bold">
-                {" "}
-                Lorem ipsum dolor sit amet consectetur. Eleifend vitae neque
-                urna sapien nisl.{" "}
-              </h2>
-            </div>
+            <p className="text-[#525151] text-2xl font-bold">Lorem ipsum dolor sit amet consectetur. Eleifend vitae neque urna sapien nisl.</p>
           </div>
         </div>
       </motion.div>
 
-      <div
-        ref={ref2}
-        className="flex md:flex-row flex-col gap-16 justify-center items-center mt-[69px]"
+      {/* <motion.div
+        style={style1}
+        className="col-start-1 col-end-2 flex flex-col drop-shadow-2xl"
       >
-        <motion.div
-          style={style1}
-          className="flex flex-col justify-center  items-center drop-shadow-2xl"
-        >
-          <div className="flex flex-col px-9 py-14 w-[380px]  md:w-[708px] md:h-[280px]  bg-white">
-            <div className="flex">
-              <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]">
-                <img src={smile} />
-              </div>
-              <h1 className="text-[#000] ml-[13px] font-medium text-lg">
-                {" "}
-                Banking{" "}
-              </h1>
-            </div>
-            <div className=" md:w-[449px]">
-              <h2 className="text-[#525151] mt-[30px] text-2xl font-bold">
-                {" "}
-                Lorem ipsum dolor sit amet consectetur. Eleifend vitae .{" "}
-              </h2>
-            </div>
+        <div className="flex flex-col bg-white p-4">
+          <div className="flex gap-2">
+            <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]"><img src={smile} alt="smile"/></div>
+            <h1 className="text-[#000] font-medium text-lg">{" "}Banking{" "}</h1>
           </div>
-          <div className=" md:w-[708px] md:h-[470px] overflow-hidden">
-            <img
-              className="  md:w-[708px] md:h-[470px] hover:scale-110 transition ease-in-out delay-150 duration-500"
-              src={girlphone2}
-            />
-          </div>
-        </motion.div>
+          <p className="text-[#525151] mt-4 text-2xl font-bold">{" "}Lorem ipsum dolor sit amet consectetur. Eleifend vitae .{" "}</p>
+        </div>
+        <img
+          alt="girlphone2"
+          className="hover:scale-105 transition ease-in-out delay-150 duration-500"
+          src={girlphone2}
+        />
+      </motion.div>
 
-        <motion.div
-          style={style2}
-          className="flex justify-center items-center flex-col mb-[2px] drop-shadow-2xl"
-        >
-          <div className="overflow-hidden w-[380px] md:w-[470px] md:h-[480px]">
-          <img
-              className=" hover:scale-110 transition ease-in-out delay-150 duration-500  md:-mt-[7px] md:w-[480px] md:h-[490px]"
-              src={iphone}
-            />
+      <motion.div
+        style={style2}
+        className="flex flex-col drop-shadow-2xl"
+      >
+        <img
+          alt="iphone"
+          className="hover:scale-110 transition ease-in-out delay-150 duration-500"
+          src={iphone}
+        />
+        <div className="flex flex-col p-4 bg-white">
+          <div className="flex gap-2">
+            <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]"><img src={smile} alt="smile"/></div>
+            <h1 className="text-[#000] font-medium text-lg">{" "}Messaging{" "}</h1>
           </div>
-          <div className="flex flex-col px-9 py-14  md:w-[470px] md:h-[270px]  bg-white">
-            <div className="flex">
-            <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]">
-                <img src={smile} />
-              </div>
-              <h1 className="text-[#000] ml-[13px] font-medium text-lg">
-                {" "}
-                Messaging{" "}
-              </h1>
-            </div>
-            <div className="md:w-[449px]">
-              <h2 className="text-[#525151] mt-[30px] text-2xl font-bold">
-                {" "}
-                Lorem ipsum dolor sit amet consectetur.{" "}
-              </h2>
-            </div>
-          </div>
-        </motion.div>
+            <p className="text-[#525151] mt-4 text-2xl font-bold">{" "}Lorem ipsum dolor sit amet consectetur.{" "}</p>
+        </div>
+      </motion.div> */}
+
       </div>
-    </div>
   );
 };
 

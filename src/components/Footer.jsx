@@ -23,7 +23,7 @@ const Footer = () => {
             src="/images/Footer Logo.png"
             alt="Avex Logo"
           />
-          <div className="flex md:mt-[29px]">
+          <div className="flex gap-2 md:mt-[29px]">
             <a
               href="https://github.com/Anubhav-Pathak/avex-website2023"
               target="_blank"
