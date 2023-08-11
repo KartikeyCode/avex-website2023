@@ -38,7 +38,7 @@ const Features = () => {
   return (
     <div className="hero my-28">
       <div className="flex z-0 flex-col lg:flex-row-reverse items-center md:justify-between bg-black rounded-xl p-4">
-        <img src="/images/Screen.png" alt="Iphone" className=" max-w-lg" />
+        <img src="/images/Screen.png" alt="Iphone" className="w-64 sm:w-[512px]" />
         <div className=" ml-[10px] xl:ml-[128px]">
           <h1 className="text-4xl md:text-5xl font-bold mb-14 text-transparent bg-clip-text bg-gradient-to-b from-[#DF5AE1] to-[#465DD8] ">Wallet Features</h1>
           {FeaturesDetails.map((feature, index) => (
