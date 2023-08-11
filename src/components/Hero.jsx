@@ -182,8 +182,8 @@ const Hero = () => {
   });
 
   const fontWeight = useTransform(scrollYProgress, [0, 1], [400, 700]);
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, 650]); // Adjust the range and values as needed
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]); // Adjust the range and values as needed
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, 650]);     // Adjust the range and values as needed
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);          // Adjust the range and values as needed
   let style = {};
   if (!shouldDisableScrollAnimation) {
     style = { y: translateY, scale: scale, fontWeight: fontWeight };
