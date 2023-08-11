@@ -14,29 +14,26 @@ const Navbar = () => {
             <a
               href="/"
               className="font-inter font-bold"
-              style={{ color: "#7d7d7d" }}
-            >
+              style={{ color: "#7d7d7d" }}>
               {" "}
-              Use Cases{" "}
+              DID{" "}
             </a>
           </li>
           <li>
             <a
               href="/"
               className="font-inter font-bold"
-              style={{ color: "#7d7d7d" }}
-            >
+              style={{ color: "#7d7d7d" }}>
               {" "}
-              Blogs{" "}
+              Features{" "}
             </a>
           </li>
           <li>
             <a
-              href="/"
+              href="/waitlist"
               className="font-inter font-bold"
-              style={{ color: "#7d7d7d" }}
-            >
-              Contact Us
+              style={{ color: "#7d7d7d" }}>
+              Join Waitlist
             </a>
           </li>
         </ul>
@@ -46,14 +43,12 @@ const Navbar = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
-            >
+              className="inline-block w-5 h-5 stroke-current">
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>
+                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"></path>
             </svg>
           </summary>
           <ul className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-52 gap-3">
@@ -62,8 +57,7 @@ const Navbar = () => {
               <a
                 href="/"
                 className="font-inter font-bold"
-                style={{ color: "#7d7d7d" }}
-              >
+                style={{ color: "#7d7d7d" }}>
                 {" "}
                 Use Cases{" "}
               </a>
@@ -72,8 +66,7 @@ const Navbar = () => {
               <a
                 href="/"
                 className="font-inter font-bold"
-                style={{ color: "#7d7d7d" }}
-              >
+                style={{ color: "#7d7d7d" }}>
                 {" "}
                 Blogs{" "}
               </a>
@@ -82,8 +75,7 @@ const Navbar = () => {
               <a
                 href="/"
                 className="font-inter font-bold"
-                style={{ color: "#7d7d7d" }}
-              >
+                style={{ color: "#7d7d7d" }}>
                 Contact Us
               </a>
             </li>

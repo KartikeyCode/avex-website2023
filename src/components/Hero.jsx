@@ -1,10 +1,6 @@
 import { useRef, React } from "react";
 
-import {
-  motion,
-  useScroll,
-  useTransform,
-} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 import Image1 from "../assets/images/1.png";
 import Image2 from "../assets/images/2.png";
@@ -172,29 +168,26 @@ const Images = [
   },
 ];
 
-
-
 const Hero = () => {
   const windowWidth = useRef(window.innerWidth);
   const shouldDisableScrollAnimation = windowWidth.current <= 500;
-  
+
   const wiggleAnimation = {
     hover: { rotate: [-10, 10, -10, 0], transition: { duration: 0.6 } },
   };
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start start", "end start"]
+    offset: ["start start", "end start"],
   });
 
-  const fontWeight = useTransform(scrollYProgress,[0,1],[400,700])
+  const fontWeight = useTransform(scrollYProgress, [0, 1], [400, 700]);
   const translateY = useTransform(scrollYProgress, [0, 1], [0, 650]); // Adjust the range and values as needed
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]); // Adjust the range and values as needed
-  let style = {}
-  if(!shouldDisableScrollAnimation){
-    style = { y: translateY, scale: scale,fontWeight:fontWeight }
+  let style = {};
+  if (!shouldDisableScrollAnimation) {
+    style = { y: translateY, scale: scale, fontWeight: fontWeight };
   }
-  
 
   return (
     <div className=" bg-[#F2F2F2] min-h-screen  relative overflow-x-clip ">
@@ -219,22 +212,19 @@ const Hero = () => {
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
-            className="text-lg mt-52 z-0 md:ml-[250px] md:w-[414px] md:h-[86px] md:text-[35px]  font-bold mb-4 leading-snug"
-          >
+            className="text-lg mt-52 z-0 md:ml-[250px] md:w-[414px] md:h-[86px] md:text-[35px]  font-bold mb-4 leading-snug">
             Your Pass to Decentralized Future{" "}
           </motion.h1>
           <motion.p
             style={style}
             initial={{ y: 100, opacity: 0 }}
-            animate={{ y: 0, opacity: [0, 0, 0, 1]}}
+            animate={{ y: 0, opacity: [0, 0, 0, 1] }}
             transition={{ duration: 2 }}
-            className="md:text-[25px] text-xs  z-0 md:ml-[240px] md:text-xl md:w-[495px] md:h-[73px] "
-          >
+            className="md:text-[25px] text-xs  z-0 md:ml-[240px] md:text-xl md:w-[495px] md:h-[73px] ">
             Control your finance, Own your data, embrace your community{" "}
           </motion.p>
         </div>
       </div>
-      
     </div>
   );
 };
