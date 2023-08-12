@@ -38,11 +38,11 @@ const Footer = () => {
               alt="Avex Logo"
             />
             <div className="flex gap-4 mt-4">
-              <a href="https://github.com/KartikeyCode/avex-website2023" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Github.svg" alt="Github" /></a>
-              <a href="mailto:team@avex.technology" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Mail.svg" alt="Mail" /></a>
+              <a href="https://twitter.com/avex_xyz" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Twitter.svg" alt="Twitter" /></a>
               <a href="https://www.instagram.com/avex_xyz/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Instagram.svg" alt="Instagram" /></a>
+              <a href="mailto:team@avex.technology" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Mail.svg" alt="Mail" /></a>
               <a href="https://www.linkedin.com/company/avex-xyz" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/LinkedIn.svg" alt="LinkedIn" /></a>
-              <a href="/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Twitter.svg" alt="Twitter" /></a>
+              <a href="/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Discord.svg" alt="Discord" /></a>   
             </div>
           </div>
             <form className="flex flex-col items-center justify-center" onSubmit={submitHandler}>
