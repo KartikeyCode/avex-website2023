@@ -1,5 +1,7 @@
 import React from "react";
 import axios from "axios";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 
@@ -17,7 +19,7 @@ const Footer = () => {
       alert("Thank you for subscribing to our newsletter!");
     })
     .catch((err) => {
-      console.log(err);
+      
     })
   }
 
@@ -37,7 +39,7 @@ const Footer = () => {
               src="/images/Footer Logo.png"
               alt="Avex Logo"
             />
-            <div className="flex gap-4 mt-4">
+            <div className="flex gap-8 mt-4">
               <a href="https://twitter.com/avex_xyz" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Twitter.svg" alt="Twitter" /></a>
               <a href="https://www.instagram.com/avex_xyz/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Instagram.svg" alt="Instagram" /></a>
               <a href="mailto:team@avex.technology" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Mail.svg" alt="Mail" /></a>

@@ -41,7 +41,7 @@ const Data = [
 
 const Information = () => {
   return (
-    <section className="pt-36 max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-8">
+    <section className="max-w-7xl mx-auto flex flex-wrap items-center justify-center gap-8" id='Features'>
         {Data.map((card) => (
             <Card key={card.id} badge={card.badge} heading={card.heading} details={card.details} colour={card.colour} />
         ))}
