@@ -1,86 +1,60 @@
 import React from "react";
+import axios from "axios";
+
+const BASE_URL = process.env.REACT_APP_BASE_URL;
 
 const Footer = () => {
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    axios.post(`${BASE_URL ?? "http://localhost:8000"}/api/newsletter`, {
+      email: e.target[0].value,
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+    .then((res) => {
+      alert("Thank you for subscribing to our newsletter!");
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+  }
+
   return (
     <>
-      <footer className="footer py-12 h-48 px-4 items-center justify-center lg:justify-between bg-black">
-        {/* <div className="py-16 px-4">
-          <p className="text-base-100 text-xl">Meet our Team !</p>
-          <a
-            href="/"
-            className="footer-description font-normal md:text-[45px] items-center flex gap-2">
-            Drop a Hello{" "}
-            <img
-              className=" w-[44px] self-center h-[44px]"
-              src="/images/Left Arrow.png"
-              alt="Left Arrow"
-            />
-          </a>
-        </div> */}
-        <div className="flex flex-col items-center ml-5">
-          <img
-            className=""
-            src="/images/Footer Logo.png"
-            alt="Avex Logo"
-          />
-          <div className="flex gap-2 md:mt-[29px]">
-            <a
-              href="https://github.com/Anubhav-Pathak/avex-website2023"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-0 ml-0">
-              <img src="/images/github.png" alt="GitHub" />
-            </a>
-            <a
-              href="https://twitter.com/avex_xyz"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-0 ml-8">
-              <img src="/images/twitter.png" alt="Twitter" />
-            </a>
-            <a
-              href="mailto:team@avex.technology"
-              className="mb-0 ml-8">
-              <img src="/images/mail.png.png" alt="Mail" />
-            </a>
-            <img
-              src="/images/phone.png"
-              alt="Phone"
-              className="mb-0 ml-8"
-            />
-            <a
-              href="https://www.instagram.com/avex_xyz/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mb-0 ml-7">
-              <img src="/images/Vector.png" alt="Instagram" />
+      <footer className="py-12 px-4 bg-black">
+        <div className="mx-auto max-w-7xl footer flex-wrap items-center justify-center md:justify-between">
+          <div className="flex flex-col justify-center">
+            <p className="text-base-100 text-xl">Meet our Team !</p>
+            <a href="/" className="footer-description font-normal flex items-center gap-2 text-4xl">Drop a Hello{" "}
+              <img className=" w-[44px] self-center h-[44px]" src="/images/Left Arrow.png" alt="Left Arrow" />
             </a>
           </div>
+          <div className="flex flex-col items-center justify-center w-full">
+            <img
+              className=""
+              src="/images/Footer Logo.png"
+              alt="Avex Logo"
+            />
+            <div className="flex gap-4 mt-4">
+              <a href="https://github.com/KartikeyCode/avex-website2023" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Github.svg" alt="Github" /></a>
+              <a href="mailto:team@avex.technology" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Mail.svg" alt="Mail" /></a>
+              <a href="https://www.instagram.com/avex_xyz/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Instagram.svg" alt="Instagram" /></a>
+              <a href="https://www.linkedin.com/company/avex-xyz" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/LinkedIn.svg" alt="LinkedIn" /></a>
+              <a href="/" className="hover:scale-105"><img className="w-[30px] h-[30px]" src="/images/Twitter.svg" alt="Twitter" /></a>
+            </div>
+          </div>
+            <form className="flex flex-col items-center justify-center" onSubmit={submitHandler}>
+              <label htmlFor="footer-input" className="block md:text-2xl text-[#FFF]"> Subscribe to our newsletter </label>
+              <div className="flex gap-2 flex-wrap">
+                <input type="email" placeholder="abc@example.com" className="input rounded-[23px] text-white bg-[#323232] inline" />
+                <button type="submit" className="btn rounded-[23px]"> <img src="/images/Send.png" alt="Send" /> </button>
+              </div>
+            </form>
         </div>
-        {/* <form action="#" className="mr-[86px]">
-          <label
-            htmlFor="footer-input"
-            className="block md:text-2xl   text-[#FFF]">
-            Subscribe to our newsletter
-          </label>
-          <div className="flex gap-2  ">
-            <input
-              type="email"
-              placeholder="abc@example.com"
-              className="input rounded-[23px] bg-[#323232] w-full md:w-[218px] inline"
-            />
-            <button type="submit" className="btn rounded-[23px]">
-              <img src="/images/Send.png" alt="Send" />
-            </button>
-          </div>
-        </form> */}
       </footer>
-      <footer className="p-4 md:h-[61px] text-center bg-[#1E1E1E] text-base-100">
-        <p>
-          <span className="font-bold">A product of</span> &copy; Blockorps Pvt.
-          Ltd
-        </p>
-      </footer>
+      <footer className="p-4 text-center bg-[#1E1E1E] text-base-100"><p> <span className="font-bold">A product of</span> &copy; Blockorps Pvt. Ltd </p></footer>
     </>
   );
 };
