@@ -13,6 +13,7 @@ import Features from "./components/Features";
 import Collage from "./components/Collage";
 import Footer from "./components/Footer";
 import { Waitlist } from "./components/Waitlist.jsx";
+import Information from "./components/Information";
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -31,7 +32,8 @@ const App = () => {
       <Navbar />
       <Hero />
       <About />
-      <Slider />
+      <Information />
+      {/* <Slider /> */}
       <Features />
       <Collage />
       <Footer />
