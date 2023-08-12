@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const BASE_URL = process.env.REACT_APP_BASE_URL;
@@ -16,10 +16,10 @@ const Footer = () => {
       }
     })
     .then((res) => {
-      alert("Thank you for subscribing to our newsletter!");
+      toast.success("Subscribed Successfully !");
     })
     .catch((err) => {
-      
+      toast.error("Something went wrong !");
     })
   }
 
