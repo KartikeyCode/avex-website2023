@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="navbar border-2   z-50 top-10 max-w-xs lg:max-w-xl fixed left-1/2 -translate-x-1/2">
+    <div className="navbar border-2 z-50 top-2 max-w-xs lg:max-w-xl fixed left-1/2 -translate-x-1/2">
       <div className="flex-1">
         <a href="/" className="ml-9">
           <img src="/images/Logo.png" alt="Avex Logo" />
@@ -21,7 +21,7 @@ const Navbar = () => {
           </li>
           <li>
             <a
-              href="/"
+              href="#Features"
               className="font-inter font-bold"
               style={{ color: "#7d7d7d" }}>
               {" "}

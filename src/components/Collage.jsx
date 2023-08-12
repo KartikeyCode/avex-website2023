@@ -35,7 +35,7 @@ const Collage = () => {
   
 
   return (
-    <div className="mb-36 grid grid-cols-1 sm:grid-cols-[1.79fr_1fr] gap-2 p-4 max-w-7xl mx-auto">
+    <div className="mb-36 grid grid-cols-1 lg:grid-cols-[1.79fr_1fr] gap-8 md:gap-16 p-4 max-w-7xl mx-auto">
       
       <motion.div
         ref={ref}
@@ -46,16 +46,16 @@ const Collage = () => {
         }}
         className="col-span-full border-2"
       >
-        <div className="col-span-full flex flex-col sm:flex-row drop-shadow-2xl">
+        <div className="col-span-full flex flex-col lg:flex-row drop-shadow-2xl">
           <div className=""><img src="/images/Banner1.png" alt="Girl"/></div>
           <div className="bg-white px-6 py-2">
             <div className="flex gap-2 py-10">
               <div className="rounded-[4px] flex justify-center items-center bg-[#0568FD] w-[30px] h-[30px]"><img src={smile} alt="smile"/></div>
-              <h1 className="text-[#000] font-medium text-lg ">{" "}Security{" "}</h1>
+              <h1 className="text-[#000] text-lg ">{" "}Security{" "}</h1>
             </div>
-            <h1 className="text-[#525151] text-2xl font-bold  mb-4"> Say Goodbye to Hacks </h1>
-            <p className="text-[#525151] font-medium text-xl  max-w-md">Never worry about scams and privacy leaks. All your assets and valuables are protected in a self-custodial way using our 3FA protection making it hack proof and easily recoverable.  </p>
-            <p className="text-[#525151] font-medium text-xl mt-4 max-w-md">Three Factor Authentication -<br/> • Email <br/>• Face <br/>• MPC </p>
+            <h1 className="text-[#525151] text-2xl font-bold mb-4"> Say Goodbye to Hacks </h1>
+            <p className="text-[#525151] max-w-md text-lg">Never worry about scams and privacy leaks. All your assets and valuables are protected in a self-custodial way using our 3FA protection making it hack proof and easily recoverable.  </p>
+            <p className="text-[#525151] mt-4 max-w-md text-lg">Three Factor Authentication -<br/> • Email <br/>• Face <br/>• MPC </p>
           </div>
         </div>
       </motion.div>

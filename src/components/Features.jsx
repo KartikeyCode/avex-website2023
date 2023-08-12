@@ -37,8 +37,8 @@ const Features = () => {
 
   return (
     <div className="hero my-28">
-      <div className="flex flex-col-reverse xl:flex-row items-center justify-between bg-black rounded-xl p-8">
-        <div className="">
+      <div className="flex flex-col-reverse xl:flex-row items-center justify-between bg-black rounded-xl p-4 sm:p-8">
+        <div className="self-start xl:mt-8 xl:ml-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-14 text-transparent bg-clip-text bg-gradient-to-b from-[#DF5AE1] to-[#465DD8] ">Wallet Features</h1>
           {FeaturesDetails.map((feature, index) => (
             <Accordian
@@ -50,7 +50,7 @@ const Features = () => {
             />
             ))}
         </div>
-        <img src="/images/Screen.png" alt="Iphone" className="" />
+        <img src="/images/Screen.png" alt="Iphone" className="" width={668} />
       </div>
     </div>
   );
