@@ -4,35 +4,12 @@ import { motion, useInView } from "framer-motion";
 import smile from "../assets/images/recvec.svg";
 
 const Collage = () => {
-  const windowWidth = useRef(window.innerWidth);
-  const shouldDisableScrollAnimation = windowWidth.current <= 500;
   const ref = useRef(null);
   const ref2 = useRef(null);
+  const ref3 = useRef(null);
   const isInView = useInView(ref, { once: true });
   const isInView2 = useInView(ref2, { once: true });
-  // let style1  = {
-  //   transform: isInView2 ? "none" : "translateY(100px)",
-  //   opacity: isInView2 ? 1 : 0,
-  //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  // }
-  // let style2  = {
-  //   transform: isInView2 ? "none" : "translateY(100px)",
-  //   opacity: isInView2 ? 1 : 0,
-  //   transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  // }
-  // if(!shouldDisableScrollAnimation){
-  //   style1 = {
-  //     transform: isInView2 ? "none" : "translateX(-100px)",
-  //     opacity: isInView2 ? 1 : 0,
-  //     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  //   }
-  //   style2 = {
-  //     transform: isInView2 ? "none" : "translateX(100px)",
-  //     opacity: isInView2 ? 1 : 0,
-  //     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
-  //   }
-  // }
-  
+  const isInView3 = useInView(ref3, { once: true });
 
   return (
     <div className="mb-36 grid grid-cols-1 lg:grid-cols-[1.79fr_1fr] gap-8 md:gap-16 p-4 max-w-7xl mx-auto">
@@ -44,7 +21,7 @@ const Collage = () => {
           opacity: isInView ? 1 : 0,
           transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
         }}
-        className="col-span-full border-2"
+        className="col-span-full"
       >
         <div className="col-span-full flex flex-col lg:flex-row drop-shadow-2xl">
           <div className=""><img src="/images/Banner1.png" alt="Girl"/></div>
@@ -61,7 +38,12 @@ const Collage = () => {
       </motion.div>
 
       <motion.div
-        // style={style1}
+        ref={ref2}
+        style={{
+          transform: isInView2 ? "none" : "translateY(-100px)",
+          opacity: isInView2 ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
         className="col-start-1 col-end-2 flex flex-col drop-shadow-2xl"
       >
         <div className="flex flex-col px-8 py-8 bg-white p-4">
@@ -79,7 +61,12 @@ const Collage = () => {
       </motion.div>
 
       <motion.div
-        // style={style2}
+        ref={ref3}
+        style={{
+          transform: isInView3 ? "none" : "translateY(-100px)",
+          opacity: isInView3 ? 1 : 0,
+          transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s",
+        }}
         className="flex flex-col drop-shadow-2xl"
       >
         <img alt="iphone" src="/images/Banner3.png" className="aspect-square"/>

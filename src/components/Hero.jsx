@@ -170,7 +170,6 @@ const Images = [
 
 const Hero = () => {
   const windowWidth = useRef(window.innerWidth);
-  const shouldDisableScrollAnimation = windowWidth.current <= 500;
 
   const wiggleAnimation = {
     hover: { rotate: [-10, 10, -10, 0], transition: { duration: 0.6 } },
@@ -182,48 +181,40 @@ const Hero = () => {
   });
 
   const fontWeight = useTransform(scrollYProgress, [0, 1], [400, 700]);
-  const translateY = useTransform(scrollYProgress, [0, 1], [0, 650]);     // Adjust the range and values as needed
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);          // Adjust the range and values as needed
+  const translateY = useTransform(scrollYProgress, [0, 1], [0, 600]);     // Adjust the range and values as needed
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.25]);                  // Adjust the range and values as needed
   let style = {};
-  if (!shouldDisableScrollAnimation) {
-    style = { y: translateY, scale: scale, fontWeight: fontWeight };
-  }
 
   return (
-    <div className=" bg-[#F2F2F2] min-h-screen  relative overflow-x-clip ">
+    <div className=" bg-[#F2F2F2] min-h-screen overflow-x-clip">
+      <div className="max-w-[1568px] mx-auto relative">
       {Images.map((image, index) => (
-        <motion.img
-          src={image.path}
-          alt={index}
-          style={{
-            fontWeight,
-            position: "absolute",
-            top: `${image.top}px`,
-            left: `${image.left}px`,
-          }}
+        <motion.img src={image.path} alt={index}
+          style={{ fontWeight, position: "absolute", top: `${image.top}px`, left: `${image.left}px`, }}
           whileHover="hover"
           variants={wiggleAnimation}
           className="bg-icons"
         />
       ))}
-      <div className=" hero-content   md:h-[500px] text-center px-4" ref={ref}>
-        <div className="flex flex-col justify-center items-center md:max-w-lg">
+      <div ref={ref}>
+        <div className="min-h-screen flex flex-col justify-center items-center text-center">
           <motion.h1
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: [0, 0, 1] }}
             transition={{ duration: 1 }}
-            className="text-lg mt-52 z-0 md:ml-[250px] md:w-[414px] md:h-[86px] md:text-[35px]  font-bold mb-4 leading-snug">
-            Your Pass to Decentralized Future{" "}
+            className="font-bold mb-4 text-2xl sm:text-4xl z-10">
+            Your Pass to <br /> Decentralized Future{" "}
           </motion.h1>
           <motion.p
             style={style}
             initial={{ y: 100, opacity: 0 }}
             animate={{ y: 0, opacity: [0, 0, 0, 1] }}
             transition={{ duration: 2 }}
-            className="md:text-[25px] text-xs  z-0 md:ml-[240px] md:text-xl md:w-[495px] md:h-[73px] ">
-            Control your finance, Own your data, embrace your community{" "}
+            className="z-10 text-lg">
+            Control your finance, Own your data, <br /> embrace your community{" "}
           </motion.p>
         </div>
+      </div>
       </div>
     </div>
   );

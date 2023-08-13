@@ -11,9 +11,6 @@ const Footer = () => {
     e.preventDefault();
     axios.post(`${BASE_URL ?? "http://localhost:8000"}/api/newsletter`, {
       email: e.target[0].value,
-      headers: {
-        'Content-Type': 'application/json'
-      }
     })
     .then((res) => {
       toast.success("Subscribed Successfully !");
